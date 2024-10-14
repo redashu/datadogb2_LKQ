@@ -115,3 +115,75 @@ systemctl   status  datadog-agent
    14  systemctl   status  datadog-agent 
 ```
 
+### we can check hostname of machine 
+
+```
+hostname
+ip-172-31-36-157.ap-south-1.compute.internal
+
+```
+
+### datadog agent and its components 
+
+<img src="compo.png">
+
+## datadog command any os can use it 
+
+```
+datadog-agent  --help 
+
+The Datadog Agent faithfully collects events and metrics and brings them
+to Datadog on your behalf so that you can do something useful with your
+monitoring and performance data.
+
+Usage:
+  datadog-agent [command]
+
+Available Commands:
+  check                 Run the specified check
+  completion            Generate the autocompletion script for the specified shell
+  config                Print the runtime configuration of a running agent
+  configcheck           Print all configurations loaded & resolved of a running agent
+  diagnose              Validate Agent installation, configuration and environment
+  dogstatsd             Inspect dogstatsd pipeline status
+  dogstatsd-capture     Start a dogstatsd UDS traffic capture
+
+```
+
+### hostname 
+
+```
+datadog-agent  hostname
+ip-172-31-36-157.ap-south-1.compute.internal
+[root@ip-172-31-36-157 datadog-agent]# 
+```
+
+### status 
+
+```
+ datadog-agent  status 
+Getting the status from the agent.
+
+===============
+Agent (v7.57.2)
+===============
+  Status date: 2024-10-14 15:37:26.857 UTC (1728920246857)
+  Agent start: 2024-10-14 15:14:32.403 UTC (1728918872403)
+  Pid: 9584
+  Go Version: go1.22.7
+  Python Version: 3.11.8
+  Build arch: amd64
+  Agent flavor: agent
+  Log Level: info
+
+  Paths
+  =====
+    Config File: /etc/datadog-agent/datadog.yaml
+    conf.d: /etc/datadog-agent/conf.d
+    checks.d: /etc/datadog-agent/checks.d
+```
+
+### app Server 
+
+<img src="apps5.png">
+
