@@ -75,3 +75,40 @@ Agent 7.57.2 - Commit: 38ba0c7 - Serialization version: v5.0.130 - Go version: g
 <img src="ddac.png">
 
 
+## Process in OS 
+
+<img src="process.png">
+
+### changing in datadog.yaml file to enable live process monitoring 
+
+```
+nano  /etc/datadog-agent/datadog.yaml
+
+# adding lines 
+
+##############
+#### My additional config details 
+process_config:
+  process_collection:
+    enabled: true
+```
+
+### do a configtest 
+
+```
+ datadog-agent  configcheck 
+```
+### restart service of agent 
+
+```
+systemctl restart datadog-agent
+
+===>
+systemctl status  datadog-agent
+● datadog-agent.service - Datadog Agent
+     Loaded: loaded (/usr/lib/systemd/system/datadog-agent.service; enabled; preset: disabled)
+     Active: active (running) since Tue 2024-10-15 14:39:20 UTC; 20s ago
+   Main PID: 23002 (agent)
+      Tasks: 8 (limit: 4658)
+     Memory: 93.0M
+```
