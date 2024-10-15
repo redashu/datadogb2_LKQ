@@ -112,3 +112,49 @@ systemctl status  datadog-agent
       Tasks: 8 (limit: 4658)
      Memory: 93.0M
 ```
+
+## to deploy a webapp we need code + app server 
+
+### on LInux machine install git to download code 
+
+```
+ yum install git -y 
+
+ ====>
+ git  clone    https://github.com/redashu/LKQ_UIwebapp.git 
+
+ ===> 
+  ls
+LKQ_UIwebapp  ddagent-install.log
+
+```
+
+### Install apache httpd 
+
+```
+yum install httpd -y 
+
+===>
+
+ls LKQ_UIwebapp/
+README.md  index.html  people.png
+
+====>
+cp LKQ_UIwebapp/people.png  /var/www/html/
+cp LKQ_UIwebapp/index.html  /var/www/html/
+
+```
+
+### start your app server 
+
+```
+ systemctl  start httpd
+[root@ip-172-31-36-157 ~]# 
+[root@ip-172-31-36-157 ~]# systemctl  status httpd
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; disabled; preset: disabled)
+     Active: active (running) since Tue 2024-10-15 15:22:12 UTC; 5s ago
+       Docs: man:httpd.service(8)
+   Main PID: 54460 (httpd)
+     Status: "Started, listening on: por
+```
