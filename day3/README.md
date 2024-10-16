@@ -65,3 +65,78 @@ ip-172-31-36-157.ap-south-1.compute.internal
 
 <img src="ddc.png">
 
+## system.cpu.system (kernel space --process)
+
+<img src="proc1.png">
+
+### cpuIowait 
+
+<img src="iocpu.png">
+
+## Grouping and filtering in datadog 
+
+<img src="ddif.png">
+
+## Tags 
+
+<img src="tag1.png">
+
+## reserver tags as key 
+
+[click_here](https://docs.datadoghq.com/getting_started/tagging/)
+
+<img src="rkey.png">
+
+### ways to tag datadog host infra
+
+<img src="hosti.png">
+
+### datadog.yaml to update datadog agent tags
+
+```
+tags:
+  - "ashu:windows_10"
+  - "os_provider:microsoft"
+  - "db:mssql"
+
+```
+
+### changing in linux vm datadog tags
+
+```
+ec2-user@ip-172-31-36-157 ~]$ whoami
+ec2-user
+[ec2-user@ip-172-31-36-157 ~]$ sudo -i
+[root@ip-172-31-36-157 ~]# whoami
+root
+[root@ip-172-31-36-157 ~]# 
+
+```
+### changing in yaml file 
+
+```
+nano /etc/datadog-agent/datadog.yaml 
+
+====>
+tags:
+  - "os_privider:linux"
+  - "app_server:httpd"
+  - "vm_location:aws_cloud"
+
+===>
+datadog-agent configcheck 
+
+===>
+systemctl restart datadog-agent
+[root@ip-172-31-36-157 ~]# systemctl status  datadog-agent
+● datadog-agent.service - Datadog Agent
+     Loaded: loaded (/usr/lib/systemd/system/datadog-agent.service; enabled; preset: disabled)
+     Active: active (running) since Wed 2024-10-16 15:58:48 UTC; 6s ago
+   Main PID: 32613 (agent)
+      Tasks: 8 (limit: 4658)
+```
+## verify tags 
+
+```
+
+```
