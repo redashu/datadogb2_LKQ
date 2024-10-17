@@ -117,3 +117,11 @@ d5648f1fde47   nginx     "/docker-entrypoint.…"   54 minutes ago   Up 54 minut
 6076b4ec3892   nginx     "/docker-entrypoint.…"   54 minutes ago   Up 54 minutes   0.0.0.0:1234->80/tcp, :::1234->80/tcp   ashuwebapp1
 [root@ip-172-31-36-157 docker.d]# 
 ```
+
+### alpine containers 
+
+```
+docker run -itd --name ashugenc1 alpine 
+docker run -itd --name ashugenc2 alpine 
+
+```
