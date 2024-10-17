@@ -125,3 +125,8 @@ docker run -itd --name ashugenc1 alpine
 docker run -itd --name ashugenc2 alpine 
 
 ```
+
+### task image 
+
+<img src="t1.png">
+
