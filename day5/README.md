@@ -56,3 +56,30 @@ docker run -itd --name ashuappnewc11  -p 1234:80 nginx
 
 <img src="mt.png">
 
+### Datadog QL 
+
+<img src="dql.png">
+
+### datadog process details in linux 
+
+```
+ sudo -i
+[root@ip-172-31-39-244 ~]# docker  ps | grep -i ashu
+9b0c8dfa9947   alpine                     "/bin/sh"                2 hours ago   Up 2 hours                                                                   ashualpc1
+48ff469fce5b   nginx                      "/docker-entrypoint.…"   2 hours ago   Up 2 hours             0.0.0.0:1234->80/tcp, :::1234->80/tcp                 ashuappnewc11
+[root@ip-172-31-39-244 ~]# 
+[root@ip-172-31-39-244 ~]# docker inspect ashualpc1 | grep -i pid 
+            "Pid": 42732,
+            "PidMode": "",
+            "PidsLimit": null,
+[root@ip-172-31-39-244 ~]# 
+[root@ip-172-31-39-244 ~]# cd /proc/42732
+[root@ip-172-31-39-244 42732]# ls
+arch_status  clear_refs       cwd      gid_map   map_files  mountstats  oom_score      projid_map  setgroups     statm           timers
+attr         cmdline          environ  io        maps       net         oom_score_adj  root        smaps         status          timerslack_ns
+autogroup    comm             exe      latency   mem        ns          pagemap        sched       smaps_rollup  syscall         uid_map
+auxv         coredump_filter  fd       limits    mountinfo  numa_maps   patch_state    schedstat   stack         task            wchan
+cgroup       cpuset           fdinfo   loginuid  mounts     oom_adj     personality    sessionid   stat          timens_offsets
+[root@ip-172-31-39-244 42732]# 
+
+```
