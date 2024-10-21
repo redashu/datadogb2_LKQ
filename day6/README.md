@@ -82,3 +82,19 @@ ad-config-provider-kubernetes-container-allinone, ad-containerlistener, ad-servi
 [root@ip-172-31-36-157 conf.d]# 
 
 ```
+
+## Process graphs 
+
+### timeseries graph 
+
+<img src="gf.png">
+
+### do a good query to search in process section 
+
+<img src="q1.png">
+
+## Dashbaord Intro
+
+### back tech 
+
+<img src="dash1.png">
