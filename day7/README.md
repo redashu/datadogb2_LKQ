@@ -49,5 +49,64 @@ access_log  error_log
 [root@ip-172-31-36-157 httpd]# 
 
 
+```
+
+### datadog as logging solution 
+
+<img src="dlog1.png">
+
+### datadog store logs in Indexed format (db table format schema)
+
+<img src="stored.png">
+
+
+### enable datadog for apache httpd 
+
+### change ing datadog.yaml file 
+```
+logs_enabled: true
+```
+
+### enable apache integration 
+
+```
+nano /etc/datadog-agent/conf.d/apache.d/ashu_httpd.yaml
+
+===>
+#Log section
+logs:
+
+    # - type : (mandatory) type of log input source (tcp / udp / file)
+    #   port / path : (mandatory) Set port if type is tcp or udp. Set path if type is file
+    #   service : (mandatory) name of the service owning the log
+    #   source : (mandatory) attribute that defines which integration is sending the log
+    #   sourcecategory : (optional) Multiple value attribute. Can be used to refine the source attribute
+    #   tags: (optional) add tags to each log collected
+
+  - type: file
+    path: /var/log/httpd/access_log
+    source: apache
+    sourcecategory: http_web_access
+    service: ashuservice
+
+  - type: file
+    path: /var/log/httpd/error_log
+    source: apache
+    sourcecategory: http_web_access
+    service: ashuservice
+```
+
+### set permission 
+
+```
+chmod 755 /var/log/httpd
+```
+### restart service and verify it 
+
+```
+systemctl restart datadog-agent 
+
+===>
+datadog-agent status  # please check Log-agent section from bottom 
 
 ```
