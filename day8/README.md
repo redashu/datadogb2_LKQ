@@ -121,3 +121,33 @@ Collecting bytecode==0.13.0
 Collecting cattrs==22.2.0
 
 ```
+
+### upgrading lib for bug fix
+
+```
+pip install --upgrade Flask-SQLAlchemy  SQLAlchemy 
+```
+
+### Understanding ddagent tool 
+
+<img src="python.png">
+
+### Installing ddtrace 
+
+```
+ pip install --upgrade ddtrace
+```
+
+### put ENV vars and then run python code 
+
+```
+172-31-36-157 python-flask-weathermap]# 
+[root@ip-172-31-36-157 python-flask-weathermap]# DD_SERVICE="ashu-flask-webapp"
+[root@ip-172-31-36-157 python-flask-weathermap]# DD_ENV="stagging"
+[root@ip-172-31-36-157 python-flask-weathermap]# DD_LOGS_INJECTION=true
+[root@ip-172-31-36-157 python-flask-weathermap]# 
+
+===>
+ddtrace-run    python3 weather_1.py 
+
+```
