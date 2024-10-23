@@ -102,3 +102,22 @@ env_var.bat  requirements.txt  templates  weather_1.py
 [root@ip-172-31-36-157 python-flask-weathermap]# 
 
 ```
+
+### Installing python flask to run app 
+
+```
+yum install python3-pip -y 
+
+===>
+root@ip-172-31-36-157 python-flask-weathermap]# ls
+env_var.bat  requirements.txt  templates  weather_1.py
+[root@ip-172-31-36-157 python-flask-weathermap]# pip install -r requirements.txt 
+Collecting attrs==22.1.0
+  Downloading attrs-22.1.0-py2.py3-none-any.whl (58 kB)
+     |████████████████████████████████| 58 kB 2.9 MB/s             
+Collecting bytecode==0.13.0
+  Downloading bytecode-0.13.0-py3-none-any.whl (53 kB)
+     |████████████████████████████████| 53 kB 3.7 MB/s             
+Collecting cattrs==22.2.0
+
+```
